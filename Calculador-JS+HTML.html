@@ -1,0 +1,128 @@
+<html>
+    <head><title>Calculadora em JavaScript</title>
+      
+    <script lang="javascript">
+            var num1, num2, operacao1, operacaoF,res, sinal;
+            function calcular(qual)
+            {
+                document.form.textsaida.value += qual;
+            }
+
+            function operação(sinal2)
+            {
+              num1 = parseFloat(document.form.textsaida.value);
+              document.form.textsaida.value += sinal2;
+              sinal = sinal2;
+              document.form.textsaida.value = " ";
+            
+            }
+
+            function limpa()
+            {
+                document.form.textsaida.value = " ";
+            }
+             
+            function operacaoF ()
+            {    
+                num2 = parseFloat(document.form.textsaida.value);
+      
+                if (sinal == "X")
+                {
+                res = num1*num2;
+                }
+                if (sinal == "+")
+                {
+                res = num1+num2;
+                }
+                if(sinal == "-" )
+                {
+                res = num1-num2;
+                }
+                if (sinal == "/")
+                {
+                res = num1/num2;
+            }
+            document.form.textsaida.value = " ";
+            document.form.textsaida.value += res;
+        }
+    </script>
+    <style>
+
+     div
+     {
+       font-size: 35px;
+       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+       background-color:red;
+       text-align: center;
+       height: 500px;
+       width: 500px;
+       margin-top: 100px;
+       margin-left: 500px;
+       border-radius: 100px;
+
+     }
+     
+    body
+    {
+        background-color:green;
+        font-family: Arial;
+        background-image: url(if-logo.png) ;
+        background-repeat:no-repeat;
+    }
+
+     #saida
+     {
+        background-color:azure;
+     }
+
+     input[type=text]
+    {
+       font-family: Arial;
+       font-size: 30px;
+       border-radius: 30px;
+       height: 60px;
+       width:  60px;
+       text-align: center;
+    }  
+
+    input[type=button]
+    {
+        font-family: Arial;
+        border-radius: 60px;  
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+    }
+    
+
+    </style>
+    </head>
+    <body>
+    
+        <form name="form">
+            <div>CALCULADORA 
+            <p class="saida"><input type="text" style="width:400;height:100" name="textsaida" readonly></p>
+                <input type="button" name="um" value="1" onclick="calcular(1);">
+                <input type="button" name="dois" value="2"onclick="calcular(2);">
+                <input type="button" name="tres" value="3"onclick="calcular(3);">
+                <input type="button" name="multi" value="X"onclick="operação('X');"><br>
+                <input type="button" name="quatro" value="4" onclick="calcular(4);">
+                <input type="button" name="cinco" value="5" onclick="calcular(5);">
+                <input type="button" name="seis" value="6" onclick="calcular(6);">
+                <input type="button" name="soma" value="+" onclick="operação('+');"><br>
+                <input type="button" name="sete" value="7" onclick="calcular(7);">
+                <input type="button" name="oito" value="8"onclick="calcular(8);">
+                <input type="button" name="nove" value="9" onclick="calcular(9);">
+                <input type="button" name="subtra" value="-" onclick="operação('-');"><br>
+                <input type="button" name="limpar" value="AC" onclick="limpa ('AC');">
+                <input type="button" name="ponto" value="." onclick="calcular('.');">
+                <input type="button" name="zero" value="0" onclick="calcular(0);">
+                <input type="button" name="divs" value="/" onclick="operação('/');">
+                <input type="button" name="igual" value="=" onclick="operacaoF('=');">
+            </div>
+        </form>
+    </body>
+</html>
+
+
+
